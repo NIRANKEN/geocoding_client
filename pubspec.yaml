@@ -36,11 +36,11 @@ flutter:
   plugin:
     platforms:
       android:
-        default_package: geocode_client_android
+        default_package: geocoding_client_android
       ios:
-        default_package: geocode_client_android
+        default_package: geocoding_client_android
       web:
-        default_package: geocode_client_web
+        default_package: geocoding_client_web
 
   # To add assets to your package, add an assets section, like this:
   # assets:
