@@ -14,10 +14,6 @@ dependencies:
     git:
       url: https://github.com/NIRANKEN/geocoding_client_web.git
       ref: main
-  geocoding_client_android:
-    git:
-      url: https://github.com/NIRANKEN/geocoding_client_android.git
-      ref: main
   geocoding_client_interface:
     git:
       url: https://github.com/NIRANKEN/geocoding_client_interface.git
@@ -36,9 +32,9 @@ flutter:
   plugin:
     platforms:
       android:
-        default_package: geocoding_client_android
+        dartPluginClass: GeocodingClientDefault
       ios:
-        default_package: geocoding_client_android
+        dartPluginClass: GeocodingClientDefault
       web:
         default_package: geocoding_client_web
 
