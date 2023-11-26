@@ -1,39 +1,47 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# geocoding_client
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+A Flutter plugin for [Geocoding API](https://developers.google.com/maps/documentation/geocoding/overview) provided by one of the Google Maps Platform APIs.
+iOSはまだ対応できてないよ。
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+## Getting Started
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+pubspec.ymlのdependenciesに下記を追加してね。
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+``` yml
+dependencies:
+  geocoding_client:
+    git:
+      url: https://github.com/NIRANKEN/geocoding_client.git
+      ref: 0.0.2
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+### 場所の名前から住所と緯度経度を取得する
 
-```dart
-const like = 'sample';
+``` dart
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+// ...
+
+var client = GeocodingClient.instance;
+List<PlaceMark> places = await client.getGeocode("場所の名前");
+for (var placeMark in placeMarks) {
+  logger.d('name: ${placeMark.name}, address: ${placeMark.address}, latLng: ${placeMark.latLng}'); 
+}
 ```
 
-## Additional information
+### 座標から住所情報を取得する
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+
+``` dart
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+// ...
+
+const LatLng latLng = LatLng(26.6979421, 127.88);
+
+var client = GeocodingClient.instance;
+Place place = Place.fromPlaceMark(await client.getPlaceMark(latLng));
+logger.d("address: ${placemark.address}, latLng: ${placemark.latLng}");
+```
