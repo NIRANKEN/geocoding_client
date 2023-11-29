@@ -5,7 +5,10 @@ iOSはまだ対応できてないよ。
 
 ## Getting Started
 
-pubspec.ymlのdependenciesに下記を追加してね。
+1. GoogleMapのAPIキーを設定してね。
+https://pub.dev/packages/google_maps_flutter
+
+2. pubspec.ymlのdependenciesに下記を追加してね。
 
 ``` yml
 dependencies:
