@@ -1,7 +1,7 @@
 name: geocoding_client
 description: A new Flutter package project.
-version: 0.0.2
-homepage:
+version: 0.0.3
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 environment:
   sdk: '>=3.0.5 <4.0.0'
@@ -13,16 +13,16 @@ dependencies:
   geocoding_client_web:
     git:
       url: https://github.com/NIRANKEN/geocoding_client_web.git
-      ref: 0.0.2
+      ref: 0.0.3
   geocoding_client_interface:
     git:
       url: https://github.com/NIRANKEN/geocoding_client_interface.git
-      ref: 0.0.2
+      ref: 0.0.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
